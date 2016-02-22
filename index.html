@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+	<link href="styles.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Angular stuff</title>
+</head>
+<body class="container" ng-app="">
+  
+<!-- 	This is for using data binding and engular expressions via text input live on the page -->
+  
+  <div class="jumbotron">
+  	<h1>Madlibs and One D</h1>
+  </div>
+
+  <div id="madInput">
+    <input type="text" placeholder ="emotion" ng-model="emotion">
+    <input type="text" placeholder ="verb" ng-model="verb">
+    <input type="text" placeholder ="quantity" ng-model="quantity">
+    <input type="text" placeholder ="price" ng-model="price">
+    <input type="text" placeholder ="tv show" ng-model="tv">
+    <input type="text" placeholder ="you can't type anyways" ng-model="true">
+  </div>
+  <div id="madResults">
+  	  <h1> Madlibs!</h1>    
+      <p>I am {{emotion}}. I can't wait to {{verb}}.</p> 
+      <p> I bought {{quantity}} lemons for ${{price}} each. It was ${{quantity * price}} total.</p>
+      <p> I watched {{tv}} last night.</p>
+      <p>T/F - I'm not sure how to use a logical operator in a madlib scenario: {{true}}.
+￼  </div>
+
+  
+	<h2>Other useful info:</h2>
+<!-- 	This is for using the ng-repeat directive to put members in a list-->
+	<div id="dMembers" ng-init="oneDirection=['Niall', 'Liam', 'Harry', 'Louis']">
+  		<h4>Members of One Direction</h4>
+    		<ul>
+      			<li ng-repeat="member in oneDirection">{{member}}</li>
+    		</ul>
+  	</div>  
+
+<!--   	This is for using the ng-repeat directive to add items to elements on the page NOT in a list-->
+	<div id="allMemberSentences">
+		<div class="memberSentence" ng-repeat="member in oneDirection">
+			<p class="memberSentence">{{member}} is in One Direction.</p>
+		</div>
+	</div>	
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+</body>
+</html>
